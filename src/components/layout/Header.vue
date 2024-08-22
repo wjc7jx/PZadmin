@@ -1,13 +1,15 @@
 <template>
     <div class="header-container">
         <div class="header-left">
+            <!-- 菜单折叠按钮 -->
             <el-icon class="icon-menu" size="25" @click="handleMenu">
                 <Fold />
             </el-icon>
+            <!-- 标签页 -->
             <ul class="tags">
                 <li v-for="tag in menuStore.tagList" :key="tag.path" class="tag"
                     :class="{ 'is-active': tag.path === route.path }" @click="handleClick(tag)"
-                    @close="closeTab(tag,index)">
+                >
                     <el-icon>
                         <component :is="tag.icon"></component>
                     </el-icon>
@@ -17,6 +19,7 @@
             </ul>
         </div>
         <div class="header-right">
+            <!-- 下拉框 -->
             <el-dropdown trigger="click">
                 <div class="el-dropdown-link">
                     <el-avatar class="avatar" :size="40" src="path-to-user-avatar.jpg"></el-avatar>
@@ -44,9 +47,7 @@ const handleMenu = () => {
 }
 // 点击tag
 const handleClick = (item) => {
-    router.push(item.path)
-    console.log(item);
-    menuStore.setSelectedTag(item.path)
+        router.push(item.path)
 }
 // 关闭tag
 const closeTab = (tag, index) => {

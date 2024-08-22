@@ -14,14 +14,17 @@
         </el-container>
     </div>
 </template>
+
 <script setup>
 import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
+// 引入侧边栏和头部组件
 import Aside from '@/components/layout/Aside.vue'
 import Header from '@/components/layout/Header.vue'
-
 </script>
+
 <style lang="scss" scoped>
 .common-layout{
     height: 100%;
-}</style>
+}
+</style>
